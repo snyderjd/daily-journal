@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Daily Journal</title>
+    <link rel="stylesheet" href="styles/journal.css">
+</head>
+<body class="journal__body">
+    <h1 class="heading">Daily Journal</h1>
+
+    <!-- Form with input fields to make a journal entry -->
+
+    <form class="journal" action="">
+        <fieldset class="journal__fields">
+            <label for="journalDate">Date of Entry</label>
+            <input type="date">
+            <label for="journalTopic">Topics Covered</label>
+            <input type="text">
+            <label for="journalEntry">Journal Entry</label>
+            <textarea name="journalEntry" id="journalEntry" cols="50" rows="10">Enter journal entry text</textarea>
+            <label for="mood">Mood for the Day</label>
+            <select name="moodList" id="moodList">
+                <option value="great">Great</option>
+                <option value="good">Good</option>
+                <option value="average">Average</option>
+                <option value="poor">Poor</option>
+                <option value="terrible">Terrible</option>
+            </select>
+            <button type="submit">Record Journal Entry</button>
+        </fieldset>
+    </form>
+</body>
+</html>
