@@ -1,0 +1,1 @@
+Daily journal project for Nashville Software School Web-Development course.
