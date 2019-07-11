@@ -1,0 +1,23 @@
+/* Display journal entry items vertically */
+
+.journal__fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.journal__fields label {
+    font-size: 20px;
+}
+
+.journal__body {
+    background-color: skyblue;
+}
+
+.journal__fields select {
+    height: 40px;
+}
+
+.journal__fields button {
+    height: 40px;
+    width: 160px;
+}
