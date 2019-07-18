@@ -3,6 +3,7 @@
 .journal__fields {
     display: flex;
     flex-direction: column;
+    width: 50%;
 }
 
 .journal__fields label {
