@@ -17,6 +17,24 @@
             "topic": "JavaScript Functions",
             "entry": "We started learning about and getting practice with functions in JavaScript. We learned the syntax of how they are laid out, the difference between declaring a function and a function expression, as well as the syntax for arrow functions.",
             "mood": "Good"
+        },
+        {
+            "date": "07/16/2019",
+            "topic": "JavaSCript Functions",
+            "entry": "Today we continued getting more practice with functions in JavaScript. So far I feel relatively comfortable and have completed most or all of the exercises and challenges listed in the curriculum on Github as well as the exercises posted on Repl.it. I have been trying to get practice using Git and Github with creating new repos, creating a new branch for each exercise, pushing, merging, and pulling upon the completion of each exercise.",
+            "mood": "Good"
+        },
+        {
+            "date": "07/17/2019",
+            "topic": "JS Objects/Building DOM Components",
+            "entry": "Today we went over JavaScript objects and how widely used they are. We learned how to create them, assign, access, and reassign their properties. I felt comfortable with the exercises that we did. In the afternoon we went over building DOM components in JavaScript. Factory functions can be used to build representations of HTML components with JavaScript and those representations can then be displayed in the browser.",
+            "mood": "Good"            
+        },
+        {
+            "date": "07/18/2019",
+            "topic": "Building DOM Components",
+            "entry": "Today we got some more practice with using JavaScript to build DOM components and display them in the browser. I was able to complete all of the practice and challenge exercises. Some of the challenges also covered how to create components and render them in the browser by using the built-in functions 'document.createElement()' and 'element.appendChild()'.",
+            "mood": "Good"            
         }
     ]
     
