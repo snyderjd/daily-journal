@@ -1,16 +1,15 @@
-// Gets a reference to the container in the DOM and creates a new HTML element to display journal entries
+// createEntry takes in an object and returns an HTML representation of the object 
 
-const entryContainer = document.querySelector('.entries');
+const entryComponent = Object.create({
+    createEntry: function (object) {
+        const HTMLRepresentation =
+            `<section class="entry">
+                <h2 class="entry__topic">${object.topic}</h2>
+                <p class="entry__date">Date: ${object.date}</p>
+                <p class="entry__mood">Mood: ${object.mood}</p>
+                <p class="entry__content">${object.entry}</p>
+            </section>`;
 
-const displayEntry = (object) => {
-    const entryContainer = document.querySelector('.entries');
-    const HTMLRepresentation =
-        `<section class="entry">
-            <h2 class="entry__topic">${object.topic}</h2>
-            <p class="entry__date">Date: ${object.date}</p>
-            <p class="entry__mood">Mood: ${object.mood}</p>
-            <p class="entry__content">${object.entry}</p>
-        </section>`;
-
-    entryContainer.innerHTML += HTMLRepresentation;
-};
+        return HTMLRepresentation;
+    }
+});
