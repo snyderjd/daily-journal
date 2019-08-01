@@ -45,9 +45,23 @@
     {
       "date": "2019-07-19",
       "topic": "APIs",
-      "entry": "Today we learned how to build and use APIs.",
-      "mood": "great",
+      "entry": "Today we went over how to build and use an API. We learned how to use postman to build an API or check out an API and filter or make various requests (get, post, put, delete). I completed the food-api practice exercise, which included using a public api from a food website to get data on various foods, create HTML representations of the foods, and render them to the DOM.",
+      "mood": "Good",
       "id": 7
+    },
+    {
+      "date": "2019-07-22",
+      "topic": "APIs",
+      "entry": "Today we worked on a mini group project to get more practice working with APIs. We used fetch to get data from an API that included different types of content and then created an HTML representation of the content and rendered it to the DOM. It was good to get more practice with APIs and good to get more practice working in a group and practicing using Git and Github.",
+      "mood": "Good",
+      "id": 8
+    },
+    {
+      "date": "2019-07-23",
+      "topic": "Event Handlers",
+      "entry": "Today we went over event handlers. There are many different types of event handlers such as click, mouseover, mouseout, keyup, keydown, etc. To use an event handler you use the addEventListener function to a DOM element. addEventListener takes two arguments, the type of event to listen for, and a callback function that is executed when the event occurs.",
+      "mood": "Good",
+      "id": 9
     }
   ]
 }
