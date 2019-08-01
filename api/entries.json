@@ -41,6 +41,13 @@
       "topic": "Building DOM Components",
       "entry": "Today we got some more practice with using JavaScript to build DOM components and display them in the browser. I was able to complete all of the practice and challenge exercises. Some of the challenges also covered how to create components and render them in the browser by using the built-in functions 'document.createElement()' and 'element.appendChild()'.",
       "mood": "Good"
+    },
+    {
+      "date": "2019-07-19",
+      "topic": "APIs",
+      "entry": "Today we learned how to build and use APIs.",
+      "mood": "great",
+      "id": 7
     }
   ]
 }
