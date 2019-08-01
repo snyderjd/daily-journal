@@ -15,20 +15,20 @@
     <form class="journal" action="">
         <fieldset class="journal__fields">
             <label for="journalDate">Date of Entry</label>
-            <input type="date">
+            <input type="date" class="date" required>
             <label for="journalTopic">Topics Covered</label>
-            <input type="text">
+            <input type="text" class="topic" required>
             <label for="journalEntry">Journal Entry</label>
-            <textarea name="journalEntry" id="journalEntry" placeholder="Enter journal entry text" cols="50" rows="10"></textarea>
+            <textarea name="journalEntry" class="entryContent" id="journalEntry" placeholder="Enter journal entry text" cols="50" rows="10" required></textarea>
             <label for="mood">Mood for the Day</label>
-            <select name="moodList" id="moodList">
+            <select name="moodList" id="moodList" class="mood" required>
                 <option value="great">Great</option>
                 <option value="good">Good</option>
                 <option value="average">Average</option>
                 <option value="poor">Poor</option>
                 <option value="terrible">Terrible</option>
             </select>
-            <button type="submit">Record Journal Entry</button>
+            <button type="submit" class="submit">Record Journal Entry</button>
         </fieldset>
     </form>
     <article class="entries"></article>
