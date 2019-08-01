@@ -11,8 +11,7 @@
     <h1 class="heading">Daily Journal</h1>
 
     <!-- Form with input fields to make a journal entry -->
-
-    <form class="journal" action="">
+    <form action="">
         <fieldset class="journal__fields">
             <label for="journalDate">Date of Entry</label>
             <input type="date" class="date" required>
@@ -22,15 +21,16 @@
             <textarea name="journalEntry" class="entryContent" id="journalEntry" placeholder="Enter journal entry text" cols="50" rows="10" required></textarea>
             <label for="mood">Mood for the Day</label>
             <select name="moodList" id="moodList" class="mood" required>
-                <option value="great">Great</option>
-                <option value="good">Good</option>
-                <option value="average">Average</option>
-                <option value="poor">Poor</option>
-                <option value="terrible">Terrible</option>
+                <option value="Great">Great</option>
+                <option value="Good">Good</option>
+                <option value="Average">Average</option>
+                <option value="Poor">Poor</option>
+                <option value="Terrible">Terrible</option>
             </select>
             <button type="submit" class="submit">Record Journal Entry</button>
         </fieldset>
     </form>
+
     <article class="entries"></article>
 
     <script src="scripts/data.js"></script>
