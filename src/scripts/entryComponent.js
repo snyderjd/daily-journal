@@ -13,3 +13,12 @@ const entryComponent = Object.create({
         return HTMLRepresentation;
     }
 });
+
+const createEntryObject = (date, topic, entry, mood) => {
+    return {
+        date: date,
+        topic: topic,
+        entry: entry,
+        mood: mood
+    };
+};

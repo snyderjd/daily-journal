@@ -15,4 +15,15 @@ const data = Object.create({
     }
 });
 
+const saveJournalEntry = (entryObject) => {
+    // Use `fetch` with the POST method to add your entry to your API
+    fetch("http://localhost:8088/journalEntries", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entryObject)
+    });
+};
+
 
