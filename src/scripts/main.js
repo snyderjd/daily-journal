@@ -41,8 +41,9 @@ submitButton.addEventListener('click', (event) => {
     const entryCharsArray = entryChars.split('');
     const entryWords = entryChars.split(' ');
 
-    if (entryCharsArray.every(char => okayChars.includes(char)) 
-        && entryWords.every(word => !curseWords.includes(word))) {
+    if  (entryCharsArray.every(char => okayChars.includes(char)) 
+        && entryWords.every(word => !curseWords.includes(word))
+        && topicLengthCheck(topicValue, 40)) {
 
         saveJournalEntry(newEntry)
             .then(data.getJournalEntries()
