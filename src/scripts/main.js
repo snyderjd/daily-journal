@@ -31,18 +31,19 @@ submitButton.addEventListener('click', (event) => {
     const moodValue = entryMood.value;
 
     // create a new Journal entry using the values in the form input fields
-
+    
     const newEntry = createEntryObject(dateValue, topicValue, entryContentValue, moodValue);
 
-    const okayChars = 'abcdefghijklmnopqrstuvwxyz1234567890(){}:; !.';
-    const curseWords = ['fuck', 'shit', 'damn']
+    const okayChars = 'abcdefghijklmnopqrstuvwxyz1234567890(){}:;!.,- ';
+    const curseWords = ['fuck', 'shit', 'damn'];
 
     const entryChars = `${topicValue.toLowerCase()} ${entryContentValue.toLowerCase()}`;
     const entryCharsArray = entryChars.split('');
     const entryWords = entryChars.split(' ');
 
-    if (entryCharsArray.every(char => okayChars.includes(char)) 
-        && entryWords.every(word => !curseWords.includes(word))) {
+    if  (entryCharsArray.every(char => okayChars.includes(char)) 
+        && entryWords.every(word => !curseWords.includes(word))
+        && topicLengthCheck(topicValue, 40)) {
 
         saveJournalEntry(newEntry)
             .then(data.getJournalEntries()

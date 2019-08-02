@@ -22,3 +22,12 @@ const createEntryObject = (date, topic, entry, mood) => {
         mood: mood
     };
 };
+
+const topicLengthCheck = (topicString, max) => {
+    if (topicString.length < max) {
+        return true;
+    } else {
+        window.alert(`Topic field must be no more than ${max} characters.`);
+        return false;
+    }
+};
