@@ -65,6 +65,24 @@ submitButton.addEventListener('click', (event) => {
 
 });
 
+// Filter journal entries by mood
+
+const filterButtons = document.getElementsByName('moodFilter__button');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', event => {
+        document.querySelector('.entries').innerHTML = '';
+
+        data.getJournalEntries().then(parsedEntries => {
+            const filteredEntries = parsedEntries.filter(entry => entry.mood === button.value);
+
+            filteredEntries.forEach(entry => {
+                const HTMLRepresentation = entryComponent.createEntry(entry);
+                entriesDOM.addHTML(HTMLRepresentation);
+            });
+        });
+    });
+});
 
 
 
