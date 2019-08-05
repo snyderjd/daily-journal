@@ -1,10 +1,8 @@
-/*
-    Main application logic that uses the functions and objects
-    defined in the other JavaScript files.
+import data from "./data.js";
+import entryComponent from "./entryComponent.js";
+import entriesDOM from "./entriesDOM.js";
 
-    Change the fake variable names below to what they should be
-    to get the data and display it.
-*/
+// Main application logic that uses the functions and objects defined in the other JavaScript files
 
 data.getJournalEntries().then(parsedEntries => {
     parsedEntries.forEach(entry => {
@@ -32,7 +30,7 @@ submitButton.addEventListener('click', (event) => {
 
     // create a new Journal entry using the values in the form input fields
     
-    const newEntry = createEntryObject(dateValue, topicValue, entryContentValue, moodValue);
+    const newEntry = entryComponent.createEntryObject(dateValue, topicValue, entryContentValue, moodValue);
 
     const okayChars = 'abcdefghijklmnopqrstuvwxyz1234567890(){}:;!.,- ';
     const curseWords = ['fuck', 'shit', 'damn'];
@@ -43,9 +41,9 @@ submitButton.addEventListener('click', (event) => {
 
     if  (entryCharsArray.every(char => okayChars.includes(char)) 
         && entryWords.every(word => !curseWords.includes(word))
-        && topicLengthCheck(topicValue, 40)) {
+        && entryComponent.topicLengthCheck(topicValue, 40)) {
 
-        saveJournalEntry(newEntry)
+        data.saveJournalEntry(newEntry)
             .then(data.getJournalEntries()
             .then(parsedEntries => {
                 parsedEntries.forEach(entry => {

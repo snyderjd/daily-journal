@@ -1,6 +1,7 @@
 // createEntry takes in an object and returns an HTML representation of the object 
 
 const entryComponent = Object.create({
+    
     createEntry: function (object) {
         const HTMLRepresentation =
             `<section class="entry">
@@ -11,23 +12,26 @@ const entryComponent = Object.create({
             </section>`;
 
         return HTMLRepresentation;
+    },
+    createEntryObject: function (date, topic, entry, mood) {
+        return {
+            date: date,
+            topic: topic,
+            entry: entry,
+            mood: mood
+        };
+    },
+    
+    topicLengthCheck: (topicString, max) => {
+        if (topicString.length < max) {
+            return true;
+        } else {
+            window.alert(`Topic field must be no more than ${max} characters.`);
+            return false;
+        }
     }
+
 });
 
-const createEntryObject = (date, topic, entry, mood) => {
-    return {
-        date: date,
-        topic: topic,
-        entry: entry,
-        mood: mood
-    };
-};
+export default entryComponent;
 
-const topicLengthCheck = (topicString, max) => {
-    if (topicString.length < max) {
-        return true;
-    } else {
-        window.alert(`Topic field must be no more than ${max} characters.`);
-        return false;
-    }
-};
