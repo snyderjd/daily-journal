@@ -4,6 +4,12 @@ import entriesDOM from "./entriesDOM.js";
 
 // Main application logic that uses the functions and objects defined in the other JavaScript files
 
+// Create form for journal entries and render on the page;
+const formContainer = document.querySelector('.journal__form');
+const inputForm = entryComponent.createForm();
+formContainer.innerHTML += inputForm;
+
+// Complete request to get Journal Entries and render them on the page
 data.getJournalEntries().then(parsedEntries => {
     parsedEntries.forEach(entry => {
         const HTMLRepresentation = entryComponent.createEntry(entry);
