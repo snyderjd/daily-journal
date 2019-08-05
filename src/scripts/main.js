@@ -43,6 +43,7 @@ submitButton.addEventListener('click', (event) => {
         && entryWords.every(word => !curseWords.includes(word))
         && entryComponent.topicLengthCheck(topicValue, 40)) {
 
+        // Save the new journal entry (POST) to the entries.json file and then invoke the GET request to render it on the page 
         data.saveJournalEntry(newEntry)
             .then(data.getJournalEntries()
             .then(parsedEntries => {
