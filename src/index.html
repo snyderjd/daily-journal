@@ -13,6 +13,19 @@
     <!-- Form with input fields to make a journal entry -->
     <form class="journal__form" action=""></form>
 
+    <fieldset class="moodFilter">Filter Entries By Mood: 
+        <input type="radio" id="moodFilter__Great" name="great" value="Great">
+        <label for="moodFilter__Great">Great</label>
+        <input type="radio" id="moodFilter__Good" name="good" value="Good">
+        <label for="moodFilter__Good">Good</label>
+        <input type="radio" id="moodFilter__Average" name="average" value="Average">
+        <label for="moodFilter__Average">Average</label>
+        <input type="radio" id="moodFilter__Poor" name="poor" value="Poor">
+        <label for="moodFilter__Poor">Poor</label>
+        <input type="radio" id="moodFilter__Terrible" name="terrible" value="Terrible">
+        <label for="moodFilter__Terrible">Terrible</label>
+    </fieldset>
+
     <article class="entries"></article>
 
     <script type="module" src="scripts/main.js"></script>
