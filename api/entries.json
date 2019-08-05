@@ -62,6 +62,20 @@
       "entry": "Today we went over event handlers. There are many different types of event handlers such as click, mouseover, mouseout, keyup, keydown, etc. To use an event handler you use the addEventListener function to a DOM element. addEventListener takes two arguments, the type of event to listen for, and a callback function that is executed when the event occurs.",
       "mood": "Good",
       "id": 9
+    },
+    {
+      "date": "2019-07-25",
+      "topic": "Welcome to Nashville",
+      "entry": "Today we began working on our second group project - Welcome to Nashville. Our job is to gather data from APIs and display it on the DOM, at which point the user may select a search result and add it to an itinerary. We spent all of our time today planning. We covered what we want the page to look like, what we think the index.html file should look like, and what functions we think we will need.",
+      "mood": "Great",
+      "id": 10
+    },
+    {
+      "date": "2019-07-26",
+      "topic": "Welcome to Nashville",
+      "entry": "Today we worked on Welcome to Nashville all day. We all had to get data from a different API based on particular thing to do around Nashville (parks, restaurants, meetups, and concerts). I had the ticketmaster API and used it to pull concert data based on a keyword search. It was good practice learning how to read the documentation to use a particular API. I also completed the functionality to display the concert results and save a result to the itinerary.",
+      "mood": "Great",
+      "id": 11
     }
   ]
 }

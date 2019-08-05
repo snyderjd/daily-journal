@@ -7,3 +7,5 @@ const entriesDOM = Object.create({
         entryContainer.innerHTML += HTMLString;
     }
 });
+
+export default entriesDOM;
