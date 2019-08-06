@@ -44,25 +44,26 @@ submitButton.addEventListener('click', (event) => {
     const entryCharsArray = entryChars.split('');
     const entryWords = entryChars.split(' ');
 
-    // Make sure inputs meet the following requirements
-    if  (entryCharsArray.every(char => okayChars.includes(char)) 
+    if (dateValue === '' || topicValue === '' || entryContentValue === '' || moodValue === '') {
+
+        window.alert('Please fill out all of the input fields.');
+
+    } else if (entryCharsArray.every(char => okayChars.includes(char))
         && entryWords.every(word => !curseWords.includes(word))
         && entryComponent.topicLengthCheck(topicValue, 40)) {
 
         // Save the new journal entry (POST) to the entries.json file and then invoke the GET request to render it on the page 
         data.saveJournalEntry(newEntry)
             .then(data.getJournalEntries()
-            .then(parsedEntries => {
-                parsedEntries.forEach(entry => {
-                    const HTMLRepresentation = entryComponent.createEntry(entry);
-                    entriesDOM.addHTML(HTMLRepresentation);
-                });
-        }));
-
-    } else {
-        alert(`Only the following characters may be entered: ${okayChars} Also, no curse words!`);
-    }  
-
+                .then(parsedEntries => {
+                    parsedEntries.forEach(entry => {
+                        const HTMLRepresentation = entryComponent.createEntry(entry);
+                        entriesDOM.addHTML(HTMLRepresentation);
+                    });
+                }));
+        } else {
+            alert(`Only the following characters may be entered: ${okayChars}. Also, no curse words!`);
+        }
 });
 
 // Filter journal entries by mood

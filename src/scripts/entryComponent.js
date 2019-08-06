@@ -39,13 +39,13 @@ const entryComponent = Object.create({
     createForm: () => {
         const formHTML = `  <fieldset class="journal__fields">
                                 <label for="journalDate">Date of Entry</label>
-                                <input type="date" class="date" required>
+                                <input type="date" class="date">
                                 <label for="journalTopic">Topics Covered</label>
-                                <input type="text" class="topic" required>
+                                <input type="text" class="topic">
                                 <label for="journalEntry">Journal Entry</label>
-                                <textarea name="journalEntry" class="entryContent" id="journalEntry" placeholder="Enter journal entry text" cols="50" rows="10" required></textarea>
+                                <textarea name="journalEntry" class="entryContent" id="journalEntry" placeholder="Enter journal entry text" cols="50" rows="10"></textarea>
                                 <label for="mood">Mood for the Day</label>
-                                <select name="moodList" id="moodList" class="mood" required>
+                                <select name="moodList" id="moodList" class="mood">
                                     <option value="Great">Great</option>
                                     <option value="Good">Good</option>
                                     <option value="Average">Average</option>

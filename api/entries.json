@@ -76,20 +76,6 @@
       "entry": "Today we worked on Welcome to Nashville all day. We all had to get data from a different API based on particular thing to do around Nashville (parks, restaurants, meetups, and concerts). I had the ticketmaster API and used it to pull concert data based on a keyword search. It was good practice learning how to read the documentation to use a particular API. I also completed the functionality to display the concert results and save a result to the itinerary.",
       "mood": "Great",
       "id": 11
-    },
-    {
-      "date": "2019-08-06",
-      "topic": "",
-      "entry": "test",
-      "mood": "Great",
-      "id": 12
-    },
-    {
-      "date": "2019-08-06",
-      "topic": "function",
-      "entry": "",
-      "mood": "Great",
-      "id": 13
     }
   ]
 }
