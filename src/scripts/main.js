@@ -61,6 +61,7 @@ submitButton.addEventListener('click', (event) => {
                         entriesDOM.addHTML(HTMLRepresentation);
                     });
                 }));
+
         } else {
             alert(`Only the following characters may be entered: ${okayChars}. Also, no curse words!`);
         }
@@ -83,6 +84,28 @@ filterButtons.forEach(button => {
             });
         });
     });
+});
+
+// Add event listener to entries container to delete entries
+const entryContainer = document.querySelector('.entries');
+
+// When delete button is clicked, clear the entry container contents, delete the entry from the server, and render the remaining entries from the server
+entryContainer.addEventListener('click', event => {
+    
+    if (event.target.classList[1].startsWith('deleteEntry')) {
+
+        const entryID = event.target.classList[1].split('--')[1]; 
+        entryContainer.innerHTML = '';
+        
+        data.deleteEntry(entryID)
+            .then(data.getJournalEntries)
+            .then(parsedEntries => {
+                parsedEntries.forEach(entry => {
+                    const HTMLRepresentation = entryComponent.createEntry(entry);
+                    entriesDOM.addHTML(HTMLRepresentation);
+                });
+            });
+    }
 });
 
 

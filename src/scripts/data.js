@@ -18,6 +18,13 @@ const data = Object.create({
             body: JSON.stringify(entryObject),
             cache: "no-cache"
         });
+    },
+
+    // Delete an entry from the server
+    deleteEntry: (entryID) => {
+        return fetch(`http://localhost:8088/journalEntries/${entryID}`, {
+            method: "DELETE"
+        }).then(response => response.json());
     }
 });
 

@@ -10,6 +10,7 @@ const entryComponent = Object.create({
                 <p class="entry__date">Date: ${object.date}</p>
                 <p class="entry__mood">Mood: ${object.mood}</p>
                 <p class="entry__content">${object.entry}</p>
+                <button class="deleteButton deleteEntry--${object.id}">Delete Entry</button>
             </section>`;
 
         return HTMLRepresentation;
