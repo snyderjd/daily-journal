@@ -35,7 +35,6 @@ submitButton.addEventListener('click', (event) => {
     const moodValue = entryMood.value;
 
     // create a new Journal entry using the values in the form input fields
-    
     const newEntry = entryComponent.createEntryObject(dateValue, topicValue, entryContentValue, moodValue);
 
     const okayChars = 'abcdefghijklmnopqrstuvwxyz1234567890(){}:;!.,- ';
@@ -45,6 +44,7 @@ submitButton.addEventListener('click', (event) => {
     const entryCharsArray = entryChars.split('');
     const entryWords = entryChars.split(' ');
 
+    // Make sure inputs meet the following requirements
     if  (entryCharsArray.every(char => okayChars.includes(char)) 
         && entryWords.every(word => !curseWords.includes(word))
         && entryComponent.topicLengthCheck(topicValue, 40)) {
@@ -60,7 +60,7 @@ submitButton.addEventListener('click', (event) => {
         }));
 
     } else {
-        window.alert(`Only the following characters may be entered: ${okayChars} Also, no curse words!`);
+        alert(`Only the following characters may be entered: ${okayChars} Also, no curse words!`);
     }  
 
 });

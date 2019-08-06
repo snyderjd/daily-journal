@@ -2,6 +2,7 @@
 
 const entryComponent = Object.create({
     
+    // Take in an object and return an HTML representation of the object
     createEntry: function (object) {
         const HTMLRepresentation =
             `<section class="entry">
@@ -13,6 +14,8 @@ const entryComponent = Object.create({
 
         return HTMLRepresentation;
     },
+
+    // Create an object for a new entry with the input field values that are passed in
     createEntryObject: function (date, topic, entry, mood) {
         return {
             date: date,
@@ -22,6 +25,7 @@ const entryComponent = Object.create({
         };
     },
     
+    // Make sure topic length does not exceed specified number of characters
     topicLengthCheck: (topicString, max) => {
         if (topicString.length < max) {
             return true;
@@ -31,6 +35,7 @@ const entryComponent = Object.create({
         }
     },
 
+    // Return HTML needed for input fields to populate on the page
     createForm: () => {
         const formHTML = `  <fieldset class="journal__fields">
                                 <label for="journalDate">Date of Entry</label>
