@@ -1,43 +1,43 @@
 {
   "journalEntries": [
     {
-      "id": 1,
-      "date": "07/02/19",
+      "date": "2019-07-02",
       "topic": "Orientation",
       "entry": "In the morning we watched the front-end capstone project presentations by Cohort 32. It was neat to see the wide variety of applications they have built and how much they have learned in such a short period of time. In the afternoon we listed to a talk from John.",
-      "mood": "Good"
+      "mood": "Good",
+      "id": 1
     },
     {
       "id": 2,
-      "date": "07/12/2019",
+      "date": "2019-07-12",
       "topic": "JavaScript DOM Manipulation and Objects",
       "entry": "Today we learned how to manipulate html elements in the DOM and learned the basics of JavaScript objects and how to access their properties and values",
       "mood": "Good"
     },
     {
       "id": 3,
-      "date": "07/15/2019",
+      "date": "2019-07-15",
       "topic": "JavaScript Functions",
       "entry": "We started learning about and getting practice with functions in JavaScript. We learned the syntax of how they are laid out, the difference between declaring a function and a function expression, as well as the syntax for arrow functions.",
       "mood": "Good"
     },
     {
       "id": 4,
-      "date": "07/16/2019",
+      "date": "2019-07-16",
       "topic": "JavaSCript Functions",
       "entry": "Today we continued getting more practice with functions in JavaScript. So far I feel relatively comfortable and have completed most or all of the exercises and challenges listed in the curriculum on Github as well as the exercises posted on Repl.it. I have been trying to get practice using Git and Github with creating new repos, creating a new branch for each exercise, pushing, merging, and pulling upon the completion of each exercise.",
       "mood": "Good"
     },
     {
       "id": 5,
-      "date": "07/17/2019",
+      "date": "2019-07-17",
       "topic": "JS Objects/Building DOM Components",
       "entry": "Today we went over JavaScript objects and how widely used they are. We learned how to create them, assign, access, and reassign their properties. I felt comfortable with the exercises that we did. In the afternoon we went over building DOM components in JavaScript. Factory functions can be used to build representations of HTML components with JavaScript and those representations can then be displayed in the browser.",
       "mood": "Good"
     },
     {
       "id": 6,
-      "date": "07/18/2019",
+      "date": "2019-07-18",
       "topic": "Building DOM Components",
       "entry": "Today we got some more practice with using JavaScript to build DOM components and display them in the browser. I was able to complete all of the practice and challenge exercises. Some of the challenges also covered how to create components and render them in the browser by using the built-in functions 'document.createElement()' and 'element.appendChild()'.",
       "mood": "Good"

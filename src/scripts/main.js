@@ -20,6 +20,7 @@ data.getJournalEntries().then(parsedEntries => {
 const submitButton = document.querySelector('.submit');
 
 // Get references to the input containers
+const hiddenInput = document.querySelector('#entryId');
 const entryDate = document.querySelector('.date');
 const entryTopic = document.querySelector('.topic');
 const entryContent = document.querySelector('.entryContent');
@@ -52,19 +53,46 @@ submitButton.addEventListener('click', (event) => {
         && entryWords.every(word => !curseWords.includes(word))
         && entryComponent.topicLengthCheck(topicValue, 40)) {
 
-        // Save the new journal entry (POST) to the entries.json file and then invoke the GET request to render it on the page 
-        data.saveJournalEntry(newEntry)
-            .then(data.getJournalEntries()
+        if (hiddenInput.value === '') {
+
+            // Save the new journal entry (POST) to the entries.json file and then invoke the GET request to render it on the page 
+            data.saveJournalEntry(newEntry)
+                .then(data.getJournalEntries()
+                    .then(parsedEntries => {
+                        parsedEntries.forEach(entry => {
+                            const HTMLRepresentation = entryComponent.createEntry(entry);
+                            entriesDOM.addHTML(HTMLRepresentation);
+                        });
+                    }));
+        } else {
+            const entryID = hiddenInput.value;
+            data.editJournalEntry(newEntry, entryID)
+                .then(data.getJournalEntries)
                 .then(parsedEntries => {
                     parsedEntries.forEach(entry => {
                         const HTMLRepresentation = entryComponent.createEntry(entry);
                         entriesDOM.addHTML(HTMLRepresentation);
                     });
-                }));
+                });
 
-        } else {
-            alert(`Only the following characters may be entered: ${okayChars}. Also, no curse words!`);
+            // reset hiddenInput value to empty string
+            hiddenInput.value = '';
+
+            // data.deleteEntry(entryID)
+            //     .then(data.getJournalEntries)
+            //     .then(parsedEntries => {
+            //         parsedEntries.forEach(entry => {
+            //             const HTMLRepresentation = entryComponent.createEntry(entry);
+            //             entriesDOM.addHTML(HTMLRepresentation);
+            //         });
+            //     });
         }
+
+
+        
+    } else {
+        alert(`Only the following characters may be entered: ${okayChars}. Also, no curse words!`);
+    }
 });
 
 // Filter journal entries by mood
@@ -105,7 +133,24 @@ entryContainer.addEventListener('click', event => {
                     entriesDOM.addHTML(HTMLRepresentation);
                 });
             });
+    } else if (event.target.classList[1].startsWith('editEntry')) {
+        // Get the entry ID of the entry whose edit button was clicked
+        const entryID = event.target.classList[1].split('--')[1];
+
+        // Get the respective entry from entries.json and use its data to fill the input fields
+        data.getJournalEntry(entryID)
+            .then(entry => {
+
+                hiddenInput.value = entry.id;
+                entryDate.value = entry.date; 
+                entryTopic.value = entry.topic;
+                entryContent.value = entry.entry;
+                entryMood.value = entry.mood;
+
+            });
+
     }
+
 });
 
 

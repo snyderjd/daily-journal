@@ -11,6 +11,7 @@ const entryComponent = Object.create({
                 <p class="entry__mood">Mood: ${object.mood}</p>
                 <p class="entry__content">${object.entry}</p>
                 <button class="deleteButton deleteEntry--${object.id}">Delete Entry</button>
+                <button class="editButton editEntry--${object.id}">Edit Entry</button>
             </section>`;
 
         return HTMLRepresentation;
@@ -39,6 +40,7 @@ const entryComponent = Object.create({
     // Return HTML needed for input fields to populate on the page
     createForm: () => {
         const formHTML = `  <fieldset class="journal__fields">
+                                <input type="hidden" id="entryId" value="" />
                                 <label for="journalDate">Date of Entry</label>
                                 <input type="date" class="date">
                                 <label for="journalTopic">Topics Covered</label>
