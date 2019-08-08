@@ -24,16 +24,6 @@ const data = Object.create({
         .then(response => response.json());
     },
 
-    // // Logic for the PUT operation
-    // fetch(`http://localhost:8088/resource/${id}`, {
-    //     method: "PUT",
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(updatedObject)
-    // })
-    // .then(res => res.json())
-
     // Send an entry object to the server to be saved
     saveJournalEntry: function (entryObject) {
         fetch("http://localhost:8088/journalEntries", {
@@ -43,7 +33,8 @@ const data = Object.create({
             },
             body: JSON.stringify(entryObject),
             cache: "no-cache"
-        });
+        })
+        .then(response => response.json());
     },
 
     // Delete an entry from the server

@@ -53,18 +53,21 @@ submitButton.addEventListener('click', (event) => {
         && entryWords.every(word => !curseWords.includes(word))
         && entryComponent.topicLengthCheck(topicValue, 40)) {
 
+        // Check if new or existing entry
         if (hiddenInput.value === '') {
 
-            // Save the new journal entry (POST) to the entries.json file and then invoke the GET request to render it on the page 
+            // Send POST request to save new entry, GET and re-render all entries 
             data.saveJournalEntry(newEntry)
-                .then(data.getJournalEntries()
+                    .then(data.getJournalEntries)
                     .then(parsedEntries => {
                         parsedEntries.forEach(entry => {
                             const HTMLRepresentation = entryComponent.createEntry(entry);
                             entriesDOM.addHTML(HTMLRepresentation);
                         });
-                    }));
+                    });
         } else {
+
+            // Send PUT request to edit existing entry, GET and re-render all entries
             const entryID = hiddenInput.value;
             data.editJournalEntry(newEntry, entryID)
                 .then(data.getJournalEntries)
@@ -77,26 +80,14 @@ submitButton.addEventListener('click', (event) => {
 
             // reset hiddenInput value to empty string
             hiddenInput.value = '';
-
-            // data.deleteEntry(entryID)
-            //     .then(data.getJournalEntries)
-            //     .then(parsedEntries => {
-            //         parsedEntries.forEach(entry => {
-            //             const HTMLRepresentation = entryComponent.createEntry(entry);
-            //             entriesDOM.addHTML(HTMLRepresentation);
-            //         });
-            //     });
         }
 
-
-        
     } else {
         alert(`Only the following characters may be entered: ${okayChars}. Also, no curse words!`);
     }
 });
 
 // Filter journal entries by mood
-
 const filterButtons = document.getElementsByName('moodFilter__button');
 
 filterButtons.forEach(button => {
@@ -117,9 +108,10 @@ filterButtons.forEach(button => {
 // Add event listener to entries container to delete entries
 const entryContainer = document.querySelector('.entries');
 
-// When delete button is clicked, clear the entry container contents, delete the entry from the server, and render the remaining entries from the server
+// Listen to entry container for clicks on delete or edit buttons
 entryContainer.addEventListener('click', event => {
-    
+
+    // When delete button is clicked, clear entry container contents, delete entry from entries.json, get and render remaining entries to the page
     if (event.target.classList[1].startsWith('deleteEntry')) {
 
         const entryID = event.target.classList[1].split('--')[1]; 
@@ -133,6 +125,8 @@ entryContainer.addEventListener('click', event => {
                     entriesDOM.addHTML(HTMLRepresentation);
                 });
             });
+
+    // If edit button is clicked, fill the input fields with the contents of that entry
     } else if (event.target.classList[1].startsWith('editEntry')) {
         // Get the entry ID of the entry whose edit button was clicked
         const entryID = event.target.classList[1].split('--')[1];
@@ -146,11 +140,8 @@ entryContainer.addEventListener('click', event => {
                 entryTopic.value = entry.topic;
                 entryContent.value = entry.entry;
                 entryMood.value = entry.mood;
-
             });
-
     }
-
 });
 
 
