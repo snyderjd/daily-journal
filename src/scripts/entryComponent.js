@@ -55,7 +55,7 @@ const entryComponent = Object.create({
                                     <option value="Poor">Poor</option>
                                     <option value="Terrible">Terrible</option>
                                 </select>
-                                <button type="submit" class="submit">Record Journal Entry</button>
+                                <button type="submit" class="submit">Save Entry</button>
                             </fieldset>`;
         
         return formHTML;

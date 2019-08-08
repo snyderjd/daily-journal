@@ -34,7 +34,7 @@ body {
 
 .journal__fields select, .journal__fields button {
     height: 40px;
-    width: 180px;
+    width: 140px;
     margin: 10px 5px;
     font-size: 12pt;
 }

@@ -94,6 +94,17 @@ filterButtons.forEach(button => {
     button.addEventListener('click', event => {
         document.querySelector('.entries').innerHTML = '';
 
+        // Get all entries if the all button is selected
+        if (button.value === 'all') {
+            data.getJournalEntries()
+                .then(parsedEntries => {
+                    parsedEntries.forEach(entry => {
+                        const HTMLRepresentation = entryComponent.createEntry(entry);
+                        entriesDOM.addHTML(HTMLRepresentation);
+                    });
+                });
+        }
+
         data.getJournalEntries().then(parsedEntries => {
             const filteredEntries = parsedEntries.filter(entry => entry.mood === button.value);
 
