@@ -22,11 +22,11 @@
       "mood": "Good"
     },
     {
-      "id": 4,
       "date": "2019-07-16",
-      "topic": "JavaSCript Functions",
+      "topic": "JavaScript Functions",
       "entry": "Today we continued getting more practice with functions in JavaScript. So far I feel relatively comfortable and have completed most or all of the exercises and challenges listed in the curriculum on Github as well as the exercises posted on Repl.it. I have been trying to get practice using Git and Github with creating new repos, creating a new branch for each exercise, pushing, merging, and pulling upon the completion of each exercise.",
-      "mood": "Good"
+      "mood": "Good",
+      "id": 4
     },
     {
       "id": 5,
