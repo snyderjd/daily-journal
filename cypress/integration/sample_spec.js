@@ -12,8 +12,6 @@ describe('My Second Test', function() {
     it ('Clicks an element', function() {
         cy.visit('https://example.cypress.io')
 
-        cy.pause()
-
         cy.contains('type').click()
 
         cy.url()
