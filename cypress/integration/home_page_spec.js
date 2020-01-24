@@ -102,6 +102,35 @@ describe('Edit a journal entry', function() {
         // ASSERT - verify the content of the edited journal entry is on the page
         cy.contains(editedEntry.entry)
 
+        // Delete the journal entry from the DB
+        cy.request('DELETE', 'http://localhost:5002/journalEntries/999')
+        cy.visit('http://localhost:8080/src/index.html')
+
+    })
+})
+
+// Test deleting a journal entry
+describe('Delete a journal entry', function() {
+    it ('deletes a journal entry by clicking the delete button', function() {
+        // Post a new journal entry to be deleted
+        cy.request('POST', 'http://localhost:5002/journalEntries',
+            {
+                date: "2020-01-18",
+                topic: "Delete Journal Entry",
+                entry: "Journal entry to test delete functionality",
+                mood: "Average",
+                id: 998
+            })
+            
+        cy.visit('http://localhost:8080/src/index.html')
+
+        // Click the delete button for the new entry
+        cy.get('.deleteEntry--998').click()
+
+        // Assert - page should not contain the content of the deleted entry
+        cy.visit('http://localhost:8080/src/index.html')
+        cy.contains('Journal entry to test delete functionality').should('not.exist')
+
     })
 })
 
