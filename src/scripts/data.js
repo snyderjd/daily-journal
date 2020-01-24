@@ -4,17 +4,17 @@ const data = Object.create({
 
     // Request journal entry data from the server
     getJournalEntries: function () {
-        return fetch("http://localhost:8088/journalEntries", {cache: "no-cache"})
+        return fetch("http://localhost:5002/journalEntries", {cache: "no-cache"})
             .then(response => response.json());
     },
 
     getJournalEntry: (entryID) => {
-        return fetch(`http://localhost:8088/journalEntries/${entryID}`)
+        return fetch(`http://localhost:5002/journalEntries/${entryID}`)
             .then(response => response.json());
     },
 
     editJournalEntry: (entryObject, entryID) => {
-        return fetch(`http://localhost:8088/journalEntries/${entryID}`, {
+        return fetch(`http://localhost:5002/journalEntries/${entryID}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -26,7 +26,7 @@ const data = Object.create({
 
     // Send an entry object to the server to be saved
     saveJournalEntry: function (entryObject) {
-        fetch("http://localhost:8088/journalEntries", {
+        fetch("http://localhost:5002/journalEntries", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -39,7 +39,7 @@ const data = Object.create({
 
     // Delete an entry from the server
     deleteEntry: (entryID) => {
-        return fetch(`http://localhost:8088/journalEntries/${entryID}`, {
+        return fetch(`http://localhost:5002/journalEntries/${entryID}`, {
             method: "DELETE"
         }).then(response => response.json());
     }

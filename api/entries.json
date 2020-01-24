@@ -83,27 +83,6 @@
       "entry": "Today we finished our Welcome to Nashville Project. I thought our group did a great job of getting all of getting all of the functionality to work. Everyone was able to get their data from the API, display it in a search result, and save an item to the itinerary. I also thought we did a good job of managing our git and github workflows as we only had a few merge conflicts and they were easy to resolve.",
       "mood": "Great",
       "id": 12
-    },
-    {
-      "date": "2019-01-10",
-      "topic": "Test Create Entry",
-      "entry": "Test creating an entry using cypress",
-      "mood": "Good",
-      "id": 13
-    },
-    {
-      "date": "2019-01-10",
-      "topic": "Test Create Entry",
-      "entry": "Test creating an entry using cypress",
-      "mood": "Good",
-      "id": 14
-    },
-    {
-      "date": "2019-01-10",
-      "topic": "Test Create Entry",
-      "entry": "Test creating an entry using cypress",
-      "mood": "Good",
-      "id": 15
     }
   ]
 }

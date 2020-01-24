@@ -21,12 +21,6 @@ describe('Enter data for new journal entry and save it', function() {
         }
  
         cy.visit('http://localhost:8080/src/index.html')
-
-        // Get a reference to the container that holds the entries and count them
-        // const entriesContainer = window.document.querySelector('.entries')
-        const entriesContainer = window.document.querySelector('.entries')
-        // const numEntries = entriesContainer.childElementCount
-        
         
         // Get the date input and enter the testEntry date
         cy.get('.date').type(testEntry.date)
@@ -42,9 +36,6 @@ describe('Enter data for new journal entry and save it', function() {
 
         // Save the journal entry
         cy.get('.submit').click()
-
-        // expect(entriesContainer.childElementCount).to.equal(numEntries + 1)
-        
 
     })
 })
