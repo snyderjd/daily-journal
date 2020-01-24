@@ -9,9 +9,20 @@ describe('The Home Page', function() {
     })
 })
 
+// Test reading journal entries
+describe('Reads journal entries', function() {
+    it ('ensures journal entries are present on the page after loading', function() {
+        cy.visit('http://localhost:8080/src/index.html')
+        // If there are buttons with 'Edit Entry' and 'Delete Entry' on the page, journal
+        // entries have been successfully read and loaded from the db
+        cy.contains('Edit Entry')
+        cy.contains('Delete Entry')
+    })
+})
+
 // Test creating a journal entry
-describe('Enter data for new journal entry and save it', function() {
-    it ('successfully creates a new journal entry', function(){
+describe('Create a new journal entry', function() {
+    it ('Enters the info for a new journal entry and submits it', function(){
         // Create a testEntry object that we will save to the DB
         const testEntry = {
             date: "2019-01-10",
@@ -36,6 +47,9 @@ describe('Enter data for new journal entry and save it', function() {
 
         // Save the journal entry
         cy.get('.submit').click()
+
+        // Assert - verify that the new entry is now displayed on the page
+        cy.contains(testEntry.entry)
 
     })
 })

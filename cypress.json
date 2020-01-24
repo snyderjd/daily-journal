@@ -1,4 +1,5 @@
 {
-    "baseUrl": "http://localhost:8080/src/index.html"
+    "baseUrl": "http://localhost:8080/src/index.html",
+    "watchForFileChanges": false
 }
 
