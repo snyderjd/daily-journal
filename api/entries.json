@@ -85,10 +85,17 @@
       "id": 12
     },
     {
-      "date": "2020-01-15",
-      "topic": "Edit Journal Entry",
-      "entry": "New journal entry to test edit functionality",
-      "mood": "Terrible",
+      "date": "2020-01-10",
+      "topic": "Test Create Entry",
+      "entry": "Test creating an entry using cypress",
+      "mood": "Good",
+      "id": 13
+    },
+    {
+      "date": "2020-01-04",
+      "topic": "Edited Journal Entry",
+      "entry": "Successfully edited this journal entry using cypress",
+      "mood": "Average",
       "id": 999
     }
   ]

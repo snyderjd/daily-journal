@@ -69,6 +69,39 @@ describe('Edit a journal entry', function() {
                 id: 999
             })
 
+        const editedEntry = {
+            date: "2020-01-04",
+            topic: "Edited Journal Entry",
+            entry: "Successfully edited this journal entry using cypress",
+            mood: "Average"
+        }
+
+        cy.visit('http://localhost:8080/src/index.html')
+
+        // Edit the entry that was just posted
+        cy.get('.editEntry--999').click()
+
+        // Clear date input and enter a new date
+        cy.get('.date').clear()
+        cy.get('.date').type(editedEntry.date)
+
+        // Clear topic input and enter a new topic
+        cy.get('.topic').clear()
+        cy.get('.topic').type(editedEntry.topic)
+
+        // Clear entry input and enter new entry content
+        cy.get('#journalEntry').clear()
+        cy.get('#journalEntry').type(editedEntry.entry)
+
+        // Click mood dropdown and select a different mood
+        cy.get('#moodList').select(editedEntry.mood)
+
+        // Save the journal entry
+        cy.get('.submit').click()
+
+        // ASSERT - verify the content of the edited journal entry is on the page
+        cy.contains(editedEntry.entry)
+
     })
 })
 
