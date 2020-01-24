@@ -25,7 +25,7 @@ describe('Create a new journal entry', function() {
     it ('Enters the info for a new journal entry and submits it', function(){
         // Create a testEntry object that we will save to the DB
         const testEntry = {
-            date: "2019-01-10",
+            date: "2020-01-10",
             topic: "Test Create Entry",
             entry: "Test creating an entry using cypress",
             mood: "Good"
@@ -50,6 +50,24 @@ describe('Create a new journal entry', function() {
 
         // Assert - verify that the new entry is now displayed on the page
         cy.contains(testEntry.entry)
+
+    })
+})
+
+// Test editing a journal entry
+describe('Edit a journal entry', function() {
+    it ('Edits a journal entry and saves it to the database', function() {
+        cy.visit('http://localhost:8080/src/index.html')
+
+        // Save a new entry to the database
+        cy.request('POST', 'http://localhost:5002/journalEntries', 
+            {
+                date: "2020-01-15",
+                topic: "Edit Journal Entry",
+                entry: "New journal entry to test edit functionality",
+                mood: "Terrible",
+                id: 999
+            })
 
     })
 })
